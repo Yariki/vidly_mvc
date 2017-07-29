@@ -1,0 +1,6 @@
+/packages
+/.vs
+/vidly/App_Data
+/vidly/bin
+/vidly/obj
+/vidly/*.user
