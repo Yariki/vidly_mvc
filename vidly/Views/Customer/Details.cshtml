@@ -1,0 +1,29 @@
+﻿@model vidly.ViewModels.CustomerViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.Customer == null)
+{
+    <span>The customer wasn't found.</span>
+}
+else
+{
+    <h2>@Model.Customer.Name</h2>    
+    <ul>
+        <li>@Model.Customer.MembershipType.Name</li>
+        @{
+            if (Model.Customer.Birthday.HasValue)
+            {
+                <li>@Model.Customer.Birthday.ToString()</li>
+            }
+        }
+        
+    </ul>
+}
+
+
+
+
