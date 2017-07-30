@@ -210,6 +210,10 @@
     <Compile Include="Migrations\201707292108080_PopulateGenre.Designer.cs">
       <DependentUpon>201707292108080_PopulateGenre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707300307307_AddedNumInStockToMovies.cs" />
+    <Compile Include="Migrations\201707300307307_AddedNumInStockToMovies.Designer.cs">
+      <DependentUpon>201707300307307_AddedNumInStockToMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -220,6 +224,7 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Validation\Min18YearsIfAMember.cs" />
     <Compile Include="ViewModels\Customer\CustomersViewModel.cs" />
     <Compile Include="ViewModels\Customer\CustomerViewModel.cs" />
     <Compile Include="ViewModels\Customer\CustomerFormViewModel.cs" />
@@ -318,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707292108080_PopulateGenre.resx">
       <DependentUpon>201707292108080_PopulateGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707300307307_AddedNumInStockToMovies.resx">
+      <DependentUpon>201707300307307_AddedNumInStockToMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
