@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Newtonsoft.Json;
 using vidly.Models;
 
 namespace vidly.Validation
@@ -14,7 +13,7 @@ namespace vidly.Validation
       {
         return new ValidationResult("Customer is required.");
       }
-      if (customer.MembershipTypeId == MembershipType.Unknown 
+      if (customer.MembershipTypeId == MembershipType.Unknown
           || customer.MembershipTypeId == MembershipType.PayAsYouGo)
       {
         return ValidationResult.Success;
@@ -28,7 +27,6 @@ namespace vidly.Validation
       return age >= 18
         ? ValidationResult.Success
         : new ValidationResult("Customer should be at least 18 years old to a membership.");
-      
     }
   }
 }

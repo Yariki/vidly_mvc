@@ -11,7 +11,7 @@
 }
 else
 {
-    <h2>@Model.Customer.Name</h2>    
+    <h2>@Model.Customer.Name</h2>
     <ul>
         <li>@Model.Customer.MembershipType.Name</li>
         @{
@@ -20,10 +20,5 @@ else
                 <li>@Model.Customer.Birthday.ToString()</li>
             }
         }
-        
     </ul>
 }
-
-
-
-

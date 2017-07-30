@@ -7,7 +7,6 @@ namespace vidly.ViewModels
 {
   public class MovieFormViewModel
   {
-
     public MovieFormViewModel()
     {
       Id = 0;
@@ -21,7 +20,7 @@ namespace vidly.ViewModels
       GenreId = movie.GenreId;
       NumberInStock = movie.NumberInStock;
     }
-    
+
     public IEnumerable<Genre> Genres { get; set; }
 
     public int? Id { get; set; }
@@ -45,18 +44,16 @@ namespace vidly.ViewModels
       get { return Id != 0 ? "Edit Movie" : "New Movie"; }
     }
 
-
     public Movie GetMovie()
     {
       return new Movie()
       {
         Id = this.Id.Value,
         Name = this.Name,
-        ReleaseDate =  this.ReleaseDate.Value,
+        ReleaseDate = this.ReleaseDate.Value,
         GenreId = this.GenreId.Value,
         NumberInStock = this.NumberInStock.Value
       };
     }
-
   }
 }

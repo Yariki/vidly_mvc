@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using vidly.DAL;
 using vidly.Models;
@@ -23,12 +20,12 @@ namespace vidly.Controllers
       base.Dispose(disposing);
       _context.Dispose();
     }
-   
+
     // GET: Customer
     public ActionResult Index()
     {
       var customers = _context.Customers.Include("MembershipType");
-      return View(new CustomersViewModel(){Customers = customers});
+      return View(new CustomersViewModel() { Customers = customers });
     }
 
     public ActionResult Details(int id)
@@ -38,7 +35,7 @@ namespace vidly.Controllers
       {
         return new HttpNotFoundResult();
       }
-      return View(new CustomerViewModel(){Customer =  customer});
+      return View(new CustomerViewModel() { Customer = customer });
     }
 
     public ActionResult New()
@@ -46,11 +43,11 @@ namespace vidly.Controllers
       var membershipTypes = _context.MembershipTypes;
       var viewModel = new CustomerFormViewModel()
       {
-        Customer =  new Customer(),
+        Customer = new Customer(),
         MembershipTypes = membershipTypes
       };
 
-      return View("CustomerForm",viewModel);
+      return View("CustomerForm", viewModel);
     }
 
     [HttpPost]
@@ -66,7 +63,7 @@ namespace vidly.Controllers
         };
         return View("CustomerForm", formViewModel);
       }
-      
+
       if (customerForm.Customer.Id == 0)
       {
         _context.Customers.Add(customerForm.Customer);
@@ -84,7 +81,7 @@ namespace vidly.Controllers
       }
       _context.SaveChanges();
 
-      return RedirectToAction("Index","Customer");
+      return RedirectToAction("Index", "Customer");
     }
 
     public ActionResult Edit(int id)
@@ -92,8 +89,8 @@ namespace vidly.Controllers
       var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
       var editViewModel = new CustomerFormViewModel()
       {
-        Customer =  customer,
-        MembershipTypes =  _context.MembershipTypes.ToList()
+        Customer = customer,
+        MembershipTypes = _context.MembershipTypes.ToList()
       };
       return View("CustomerForm", editViewModel);
     }

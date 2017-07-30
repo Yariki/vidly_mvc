@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace vidly.Models
 {
   public class Movie
   {
-
     public int Id { get; set; }
 
     [Required]
@@ -27,8 +23,7 @@ namespace vidly.Models
     public int GenreId { get; set; }
 
     [Required]
-    [Range(1,20)]
+    [Range(1, 20)]
     public int NumberInStock { get; set; }
-    
   }
 }

@@ -1,18 +1,17 @@
 namespace vidly.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
-    public partial class AddedNumInStockToMovies : DbMigration
+  using System.Data.Entity.Migrations;
+
+  public partial class AddedNumInStockToMovies : DbMigration
+  {
+    public override void Up()
     {
-        public override void Up()
-        {
-            AddColumn("dbo.Movies", "NumberInStock", c => c.Int(nullable: false));
-        }
-        
-        public override void Down()
-        {
-            DropColumn("dbo.Movies", "NumberInStock");
-        }
+      AddColumn("dbo.Movies", "NumberInStock", c => c.Int(nullable: false));
     }
+
+    public override void Down()
+    {
+      DropColumn("dbo.Movies", "NumberInStock");
+    }
+  }
 }

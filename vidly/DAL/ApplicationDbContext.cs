@@ -1,5 +1,5 @@
-﻿using System.Data.Entity;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 using vidly.Models;
 
 namespace vidly.DAL
@@ -23,6 +23,5 @@ namespace vidly.DAL
     {
       return new ApplicationDbContext();
     }
-
   }
 }

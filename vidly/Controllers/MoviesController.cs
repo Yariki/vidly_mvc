@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using vidly.DAL;
-using vidly.Models;
 using vidly.ViewModels;
 
 namespace vidly.Controllers
@@ -23,10 +20,10 @@ namespace vidly.Controllers
       base.Dispose(disposing);
       _context.Dispose();
     }
-    
+
     public ActionResult Index()
     {
-      var movies = new MoviesViewModel(){Movies = _context.Movies.Include("Genre")};
+      var movies = new MoviesViewModel() { Movies = _context.Movies.Include("Genre") };
       return View(movies);
     }
 
@@ -36,9 +33,8 @@ namespace vidly.Controllers
       {
         Genres = _context.Genres
       };
-      return View("MoviewForm",viewModel);
+      return View("MoviewForm", viewModel);
     }
-
 
     public ActionResult Details(int id)
     {
@@ -48,7 +44,7 @@ namespace vidly.Controllers
       };
       return View(movie);
     }
-    
+
     [Route("movies/release/year/month:regex(\\d:{2}):range(1,12)")]
     public ActionResult ByReleaseDate(int year, int month)
     {
@@ -83,7 +79,6 @@ namespace vidly.Controllers
         moviewInDb.NumberInStock = movieForm.NumberInStock.Value;
       }
       _context.SaveChanges();
-
 
       return RedirectToAction("Index", "Movies");
     }
