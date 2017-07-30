@@ -222,8 +222,9 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Customer\CustomersViewModel.cs" />
     <Compile Include="ViewModels\Customer\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\Customer\CustomerFormViewModel.cs" />
     <Compile Include="ViewModels\Movie\MoviesViewModel.cs" />
-    <Compile Include="ViewModels\Movie\MovieVIewModel.cs" />
+    <Compile Include="ViewModels\Movie\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\Movie\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -285,11 +286,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
-    <Content Include="Views\Customer\New.cshtml" />
+    <Content Include="Views\Customer\CustomerForm.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Movies\MoviewForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
