@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 using vidly.DAL;
+using vidly.Helpers;
 using vidly.ViewModels;
 
 namespace vidly.Controllers
@@ -24,9 +25,11 @@ namespace vidly.Controllers
     public ActionResult Index()
     {
       var movies = new MoviesViewModel() { Movies = _context.Movies.Include("Genre") };
-      return View(movies);
+
+      return View(User.IsInRole(RoleNames.CanManageMovies) ? "List" : "ReadOnlyList", movies);
     }
 
+    [Authorize(Roles = RoleNames.CanManageMovies)]
     public ActionResult New()
     {
       var viewModel = new MovieFormViewModel()
@@ -83,6 +86,7 @@ namespace vidly.Controllers
       return RedirectToAction("Index", "Movies");
     }
 
+    [Authorize(Roles = RoleNames.CanManageMovies)]
     public ActionResult Edit(int id)
     {
       var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
