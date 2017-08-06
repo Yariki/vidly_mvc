@@ -4,6 +4,7 @@ using System.Web.Http;
 using AutoMapper;
 using vidly.DAL;
 using vidly.DTO;
+using vidly.Helpers;
 using vidly.Models;
 
 namespace vidly.Controllers.Api
@@ -41,6 +42,7 @@ namespace vidly.Controllers.Api
       return Ok(Mapper.Map<Movie, MovieDto>(movie));
     }
 
+    [Authorize(Roles = RoleNames.CanManageMovies)]
     [HttpPost]
     public IHttpActionResult CreateMovie(MovieDto movieDto)
     {
@@ -56,6 +58,7 @@ namespace vidly.Controllers.Api
     }
 
     [HttpPut]
+    [Authorize(Roles = RoleNames.CanManageMovies)]
     public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)
     {
       if (!ModelState.IsValid)
@@ -74,6 +77,7 @@ namespace vidly.Controllers.Api
     }
 
     [HttpDelete]
+    [Authorize(Roles = RoleNames.CanManageMovies)]
     public IHttpActionResult DeleteMovie(int id)
     {
       var movie = _context.Movies.SingleOrDefault(m => m.Id == id);

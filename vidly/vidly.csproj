@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44321</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -243,6 +243,10 @@
     <Compile Include="Migrations\201708050819267_AddDrivingLicenseToApplicationUser.cs" />
     <Compile Include="Migrations\201708050819267_AddDrivingLicenseToApplicationUser.Designer.cs">
       <DependentUpon>201708050819267_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708060120278_AddedPhoneToApplicationUser.cs" />
+    <Compile Include="Migrations\201708060120278_AddedPhoneToApplicationUser.Designer.cs">
+      <DependentUpon>201708060120278_AddedPhoneToApplicationUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -539,6 +543,9 @@
     <EmbeddedResource Include="Migrations\201708050819267_AddDrivingLicenseToApplicationUser.resx">
       <DependentUpon>201708050819267_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708060120278_AddedPhoneToApplicationUser.resx">
+      <DependentUpon>201708060120278_AddedPhoneToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -558,7 +565,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>7198</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7198/</IISUrl>
+          <IISUrl>https://localhost:44321/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
